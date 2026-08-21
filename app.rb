@@ -10,3 +10,11 @@ get "/" do
   $counter += 1
   erb :index, locals: { counter: $counter }
 end
+
+get "/about" do
+  erb :about
+end
+
+get "/contact" do
+  erb :contact
+end
