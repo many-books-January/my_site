@@ -47,6 +47,29 @@
 </style>
 </head>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("fade-in");
+
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      const url = link.getAttribute("href");
+
+      // 外部リンクや # は除外
+      if (!url.startsWith("/")) return;
+
+      e.preventDefault();
+      document.body.classList.add("fade-out");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 400); // フェードアウト時間と合わせる
+    });
+  });
+});
+</script>
+
+
 <body>
 
 <!-- 走査線アニメーション（HTML側に置く） -->

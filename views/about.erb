@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>研究所とは？</title>
+
+<style>
+  body {
+    background-color: black;
+    color: #00ffcc;
+    font-family: "MS Gothic", "Osaka", sans-serif;
+  }
+
+  a {
+    color: #00ffcc;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: yellow;
+  }
+
+  table {
+    border: 1px solid #00ffcc;
+    width: 80%;
+    margin: auto;
+    background-color: #111;
+  }
+
+  td {
+    padding: 10px;
+    border: 1px solid #00ffcc;
+  }
+
+  .banner {
+    display: block;
+    margin: 20px auto;
+  }
+
+  .counter {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+</style>
+</head>
+
+<body>
+  <div class="scanlines"></div>
+
+  <h1>研究所の概要</h1>
+  <p>
+    過去ガジェット研究所（仮）は、失われた技術やレトロ機器を研究するための
+    機関です。古い端末、過去のOS、古き良きガジェット等を
+    調査・解析・再現・保存することを目的としています。
+  </p>
+
+  <a href="/">トップへ戻る</a>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("fade-in");
+
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      const url = link.getAttribute("href");
+      if (!url.startsWith("/")) return;
+
+      e.preventDefault();
+      document.body.classList.add("fade-out");
+
+      setTimeout(() => {
+        window.location.href = url;
+      }, 400);
+    });
+  });
+});
+</script>
+
+</body>
+</html>
